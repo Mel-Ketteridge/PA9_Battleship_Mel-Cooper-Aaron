@@ -1,2 +1,4 @@
 ﻿  main.cpp
-  SFML Template.vcxproj -> C:\Users\coope\Desktop\SFML\SFML Template\Debug\SFML Template.exe
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\main.cpp(27,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\main.cpp(27,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SFML Template.vcxproj -> C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\Debug\SFML Template.exe
