@@ -9,6 +9,8 @@ private:
 	sf::Texture backgroundTexture;
 	sf::Sprite background;
 	sf::CircleShape points[8][8];
+	sf::Text boardText;
+	sf::Font timesNextRoman;
 	const int numOfCols;
 	const int numOfRows;
 	const int xPixals;

@@ -1,11 +1,20 @@
 #include "board.h"
 
-Board::Board():numOfCols(8),numOfRows(8),xPixals(1000),yPixals(950),pointRadius(50),seperationOfPoints(15),
-xOffset(45),yOffset(20){
+Board::Board():numOfCols(8),numOfRows(8),xPixals(1000),yPixals(950),pointRadius(40),seperationOfPoints(15),
+xOffset(120),yOffset(160){
 
+	//Set the background
 	backgroundTexture.loadFromFile("background.png");
 	background.setTexture(backgroundTexture);
 	background.setPosition(0, 0);
+
+	//Setup the Text
+	timesNextRoman.loadFromFile("timesbd.ttf");
+	boardText.setFont(timesNextRoman);
+	boardText.setPosition(100, 20);
+	boardText.setFillColor(sf::Color::Black);
+	boardText.setCharacterSize(100);
+	boardText.setString("Player Board");
 
 	//Initilize all the circles at the correct positions
 	for (int i = 0; i < numOfCols; i++) {
@@ -21,6 +30,7 @@ xOffset(45),yOffset(20){
 //Draw the board on the window
 void Board::draw(sf::RenderWindow& window) {
 	window.draw(background);
+	window.draw(boardText);
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			window.draw(points[i][j]);

@@ -28,6 +28,9 @@
   <ItemGroup>
     <Image Include="background.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="timesbd.ttf" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{1E03DC2C-5D84-41A8-9A10-811DA74E1F0E}</ProjectGuid>
