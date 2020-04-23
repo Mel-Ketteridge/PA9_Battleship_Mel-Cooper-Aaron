@@ -7,7 +7,7 @@ int main() {
 
 
 	while (window.isOpen()) {
-		//Handle events
+		//Handle events 
 
 		sf::Event event;
 		while (window.pollEvent(event))
