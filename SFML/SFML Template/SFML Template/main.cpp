@@ -1,11 +1,12 @@
 #include <SFML\Graphics.hpp>
+#include "board.h"
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(1000,1000), "First Try");
-	sf::Vector2f shape(110, 110);
-	sf::RectangleShape rect(shape);
+	sf::RenderWindow window(sf::VideoMode(1000,950), "First Try");
 
+	Board playerBoard;
 
+	sf::Vector2i cursorPos;
 	while (window.isOpen()) {
 		//Handle events 
 
@@ -14,21 +15,19 @@ int main() {
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+
+			//If the mouse gets moved chnage the coursePos
+			if (event.type == sf::Event::MouseMoved) {
+				cursorPos = sf::Mouse::getPosition(window);
+			}
 		}
-
-
 
 		//update
 		window.clear();
-
 		//Draw objects
-
-		for (int i = 0; i < 50; i++) {
-			for (int j = 0; j < 50; j++) {
-				rect.setPosition((110 * i) + 15* i, (110 * j) + 15 * j);
-				window.draw(rect);
-			}
-		}
+		
+		playerBoard.hover(cursorPos);
+		playerBoard.draw(window);
 
 		window.display();
 	}

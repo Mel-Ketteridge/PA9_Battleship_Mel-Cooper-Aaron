@@ -1,4 +1,23 @@
-﻿  main.cpp
-C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\main.cpp(28,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\main.cpp(28,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  board.cpp
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(13,27): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(15,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(14,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(39,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(40,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
   SFML Template.vcxproj -> C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\Debug\SFML Template.exe
