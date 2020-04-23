@@ -24,12 +24,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
+    <ClInclude Include="boardCircles.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="background.png" />
+    <Image Include="ShipCarrierHull.png" />
+    <Image Include="ShipCruiserHull.png" />
+    <Image Include="ShipDestroyerHull.png" />
+    <Image Include="ShipPatrolHull.png" />
+    <Image Include="ShipSubMarineHull.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="timesbd.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SFML Template.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

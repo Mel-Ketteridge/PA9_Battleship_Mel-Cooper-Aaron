@@ -2,7 +2,7 @@
 C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(22,27): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
 C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(24,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(23,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(51,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(62,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -11,7 +11,25 @@ C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\
           [
               T=int
           ]
-C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(52,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(63,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(84,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA8_Ketteridge\SFML\SFML Template\SFML Template\board.cpp(85,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float

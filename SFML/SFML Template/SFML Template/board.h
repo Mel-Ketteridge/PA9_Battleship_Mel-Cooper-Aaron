@@ -3,12 +3,15 @@
 
 #include <SFML\Graphics.hpp>
 #include <math.h>
+#include "boardCircles.h"
 
 class Board {
 private:
 	sf::Texture backgroundTexture;
+	sf::Texture carrierTexture;
 	sf::Sprite background;
-	sf::CircleShape points[8][8];
+	sf::Sprite carrier;
+	boardCirles points[8][8];
 	sf::Text boardText;
 	sf::Font timesNextRoman;
 	const int numOfCols;
@@ -24,6 +27,7 @@ public:
 	Board();
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
+	void clicked(sf::Vector2i mouseClickedPos);
 
 };
 
