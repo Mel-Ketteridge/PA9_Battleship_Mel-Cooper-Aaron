@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\main.cpp(28,51): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\main.cpp(28,32): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+  SFML Template.vcxproj -> C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\Debug\SFML Template.exe
