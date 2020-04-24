@@ -1,6 +1,7 @@
 #include <SFML\Graphics.hpp>
 #include "board.h"
 #include <iostream>
+#include "constants.h"
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1000,950), "First Try");
@@ -10,6 +11,9 @@ int main() {
 	sf::Vector2i cursorPos;
 	sf::Vector2i mouseClickedPos;
 	while (window.isOpen()) {
+		//update
+		window.clear();
+
 		//Handle events 
 
 		sf::Event event;
@@ -26,13 +30,12 @@ int main() {
 			if (event.type == sf::Event::MouseButtonPressed) {
 				if (event.mouseButton.button == sf::Mouse::Left) {
 					mouseClickedPos = sf::Mouse::getPosition(window);
-					playerBoard.clicked(mouseClickedPos);
+					//playerBoard.clicked(mouseClickedPos);
+					playerBoard.setShip(mouseClickedPos, window, CARRIER);
 				}
 			}
 		}
 
-		//update
-		window.clear();
 		//Draw objects
 		
 		playerBoard.hover(cursorPos);

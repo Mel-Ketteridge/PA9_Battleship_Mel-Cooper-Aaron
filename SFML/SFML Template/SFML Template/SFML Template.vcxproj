@@ -25,6 +25,7 @@
   <ItemGroup>
     <ClInclude Include="board.h" />
     <ClInclude Include="boardCircles.h" />
+    <ClInclude Include="constants.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

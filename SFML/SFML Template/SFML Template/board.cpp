@@ -28,15 +28,14 @@ xOffset(120),yOffset(160){
 	//Place the ships
 	carrierTexture.loadFromFile("ShipCarrierHull.png");
 	carrier.setTexture(carrierTexture);
-	carrier.setPosition(120, 160);
 	carrier.setRotation(-90);
 }
 
 //Draw the board on the window
 void Board::draw(sf::RenderWindow& window) {
 	window.draw(background);
-	window.draw(carrier);
 	window.draw(boardText);
+	window.draw(carrier);
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			window.draw(points[i][j]);
@@ -90,6 +89,36 @@ void Board::clicked(sf::Vector2i mouseClickedPos) {
 				if (!points[i][j].getClicked()) {
 					points[i][j].setFillColor(sf::Color::Blue);
 					points[i][j].setClicked(true);
+				}
+				else {
+					points[i][j].setFillColor(sf::Color::White);
+					points[i][j].setClicked(false);
+				}
+			}
+		}
+	}
+}
+
+void Board::setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int whichShip) {
+	sf::Vector2i spriteCenter;
+	sf::FloatRect spriteBounds;
+	for (int i = 0; i < numOfCols; i++) {
+		for (int j = 0; j < numOfRows; j++) {
+
+			//Find the center of the circle
+			spriteBounds = points[i][j].getGlobalBounds();
+			spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+			spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+
+			//If the current cursorPosition is within the radius of the Point then turn it blue
+			if (sqrt(pow((spriteCenter.x - (double)mouseClickedPos.x), 2) + pow((spriteCenter.y - (double)mouseClickedPos.y), 2))
+				<= (double)pointRadius) {
+				if (!points[i][j].getClicked()) {
+					points[i][j].setFillColor(sf::Color::Blue);
+					points[i][j].setClicked(true);
+					if (whichShip == 5) {
+						carrier.setPosition(spriteCenter.x - pointRadius, spriteCenter.y + pointRadius);
+					}
 				}
 				else {
 					points[i][j].setFillColor(sf::Color::White);

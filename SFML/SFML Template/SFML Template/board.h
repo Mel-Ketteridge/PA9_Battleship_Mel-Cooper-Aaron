@@ -4,6 +4,7 @@
 #include <SFML\Graphics.hpp>
 #include <math.h>
 #include "boardCircles.h"
+#include "constants.h"
 
 class Board {
 private:
@@ -28,6 +29,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
 	void clicked(sf::Vector2i mouseClickedPos);
+	void setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int whichShip);
 
 };
 
