@@ -99,7 +99,6 @@ void Board::clicked(sf::Vector2i mouseClickedPos) {
 	}
 }
 
-<<<<<<< HEAD
 void Board::setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int whichShip) {
 	sf::Vector2i spriteCenter;
 	sf::FloatRect spriteBounds;
@@ -129,6 +128,3 @@ void Board::setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int 
 		}
 	}
 }
-=======
-
->>>>>>> 9f8f6a1cce3c22438014624728beed276cf260d5
