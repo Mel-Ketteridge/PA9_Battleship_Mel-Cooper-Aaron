@@ -29,7 +29,11 @@ public:
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
 	void clicked(sf::Vector2i mouseClickedPos);
+<<<<<<< HEAD
 	void setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int whichShip);
+=======
+	void placeShip();
+>>>>>>> 9f8f6a1cce3c22438014624728beed276cf260d5
 
 };
 
