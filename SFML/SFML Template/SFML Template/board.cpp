@@ -99,3 +99,5 @@ void Board::clicked(sf::Vector2i mouseClickedPos) {
 		}
 	}
 }
+
+

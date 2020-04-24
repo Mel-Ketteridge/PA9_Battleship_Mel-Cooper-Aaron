@@ -28,6 +28,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
 	void clicked(sf::Vector2i mouseClickedPos);
+	void placeShip();
 
 };
 
