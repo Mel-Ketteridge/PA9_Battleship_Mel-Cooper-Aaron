@@ -10,11 +10,17 @@ class Board {
 private:
 	sf::Texture backgroundTexture;
 	sf::Texture carrierTexture;
+	sf::Texture buttonTexture;
 	sf::Sprite background;
+	sf::RectangleShape horizontal;
+	sf::RectangleShape vertical;
+	sf::Vector2f buttonSize;
 	sf::Sprite carrier;
 	boardCirles points[8][8];
 	sf::Text boardText;
-	sf::Font timesNextRoman;
+	sf::Text verticalText;
+	sf::Text horizontalText;
+	sf::Font timesNewRoman;
 	const int numOfCols;
 	const int numOfRows;
 	const int xPixals;
@@ -23,6 +29,9 @@ private:
 	const int seperationOfPoints;
 	const int xOffset;
 	const int yOffset;
+	const int buttonPosX;
+	const int buttonPosY;
+	bool areShipsSet;
 
 public:
 	Board();

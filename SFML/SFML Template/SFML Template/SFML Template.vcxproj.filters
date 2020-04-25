@@ -58,6 +58,9 @@
     <Image Include="ShipCruiserHull.png">
       <Filter>Resource Files\Ships</Filter>
     </Image>
+    <Image Include="button.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="timesbd.ttf">

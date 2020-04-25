@@ -1,7 +1,7 @@
 #include "board.h"
 
 Board::Board():numOfCols(8),numOfRows(8),xPixals(1000),yPixals(950),pointRadius(20),seperationOfPoints(55),
-xOffset(120),yOffset(160){
+xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 
 	//Set the background
 	backgroundTexture.loadFromFile("background.png");
@@ -9,12 +9,40 @@ xOffset(120),yOffset(160){
 	background.setPosition(0, 0);
 
 	//Setup the Text
-	timesNextRoman.loadFromFile("timesbd.ttf");
-	boardText.setFont(timesNextRoman);
+	timesNewRoman.loadFromFile("timesbd.ttf");
+	boardText.setFont(timesNewRoman);
 	boardText.setPosition(100, 20);
 	boardText.setFillColor(sf::Color::Black);
 	boardText.setCharacterSize(100);
 	boardText.setString("Player Board");
+
+	//Set Button Size
+	buttonSize.y = 40; buttonSize.x = 100;
+
+	//Set Button Text
+	horizontalText.setFont(timesNewRoman);
+	horizontalText.setPosition(buttonPosX + 10, buttonPosY + 5);
+	horizontalText.setFillColor(sf::Color::Black);
+	horizontalText.setCharacterSize(15);
+	horizontalText.setString("Horizontal");
+
+	verticalText.setFont(timesNewRoman);
+	verticalText.setPosition(buttonPosX + 10, buttonPosY + buttonSize.y + 25);
+	verticalText.setFillColor(sf::Color::Black);
+	verticalText.setCharacterSize(15);
+	verticalText.setString("Vertical");
+
+	//Set Button Sprits
+	buttonTexture.loadFromFile("button.png");
+	horizontal.setTexture(buttonTexture);
+	horizontal.setScale(buttonSize);
+	horizontal.setFillColor(sf::Color::White);
+	horizontal.setPosition(buttonPosX, buttonPosY);
+
+	vertical.setTexture(buttonTexture);
+	vertical.setScale(buttonSize);
+	vertical.setFillColor(sf::Color::White);
+	vertical.setPosition(buttonPosX, buttonPosY + buttonSize.y + 20);
 
 	//Initilize all the circles at the correct positions
 	for (int i = 0; i < numOfCols; i++) {
@@ -36,6 +64,10 @@ void Board::draw(sf::RenderWindow& window) {
 	window.draw(background);
 	window.draw(boardText);
 	window.draw(carrier);
+	window.draw(horizontal);
+	window.draw(horizontalText);
+	window.draw(vertical);
+	window.draw(verticalText);
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			window.draw(points[i][j]);
