@@ -34,12 +34,12 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 
 	//Set Button Sprits
 	buttonTexture.loadFromFile("button.png");
-	horizontal.setTexture(buttonTexture);
+	horizontal.setTexture(&buttonTexture);
 	horizontal.setScale(buttonSize);
 	horizontal.setFillColor(sf::Color::White);
 	horizontal.setPosition(buttonPosX, buttonPosY);
 
-	vertical.setTexture(buttonTexture);
+	vertical.setTexture(&buttonTexture);
 	vertical.setScale(buttonSize);
 	vertical.setFillColor(sf::Color::White);
 	vertical.setPosition(buttonPosX, buttonPosY + buttonSize.y + 20);
@@ -68,6 +68,7 @@ void Board::draw(sf::RenderWindow& window) {
 	window.draw(horizontalText);
 	window.draw(vertical);
 	window.draw(verticalText);
+
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			window.draw(points[i][j]);
