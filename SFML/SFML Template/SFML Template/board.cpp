@@ -17,32 +17,28 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 	boardText.setString("Player Board");
 
 	//Set Button Size
-	buttonSize.y = 40; buttonSize.x = 100;
+	buttonSize.y = 75; buttonSize.x = 150;
 
 	//Set Button Text
 	horizontalText.setFont(timesNewRoman);
-	horizontalText.setPosition(buttonPosX + 10, buttonPosY + 5);
+	horizontalText.setPosition(buttonPosX + 10, buttonPosY + 20);
 	horizontalText.setFillColor(sf::Color::Black);
-	horizontalText.setCharacterSize(15);
+	horizontalText.setCharacterSize(20);
 	horizontalText.setString("Horizontal");
 
 	verticalText.setFont(timesNewRoman);
-	verticalText.setPosition(buttonPosX + 10, buttonPosY + buttonSize.y + 25);
+	verticalText.setPosition(buttonPosX + 10, buttonPosY + buttonSize.y + 20);
 	verticalText.setFillColor(sf::Color::Black);
-	verticalText.setCharacterSize(15);
+	verticalText.setCharacterSize(20);
 	verticalText.setString("Vertical");
 
 	//Set Button Sprits
-	buttonTexture.loadFromFile("button.png");
-	horizontal.setTexture(&buttonTexture);
-	horizontal.setScale(buttonSize);
-	horizontal.setFillColor(sf::Color::White);
+	buttonTexture.loadFromFile("button2.png");
+	horizontal.setTexture(buttonTexture);
 	horizontal.setPosition(buttonPosX, buttonPosY);
 
-	vertical.setTexture(&buttonTexture);
-	vertical.setScale(buttonSize);
-	vertical.setFillColor(sf::Color::White);
-	vertical.setPosition(buttonPosX, buttonPosY + buttonSize.y + 20);
+	vertical.setTexture(buttonTexture);
+	vertical.setPosition(buttonPosX, buttonPosY + buttonSize.y);
 
 	//Initilize all the circles at the correct positions
 	for (int i = 0; i < numOfCols; i++) {
@@ -137,6 +133,10 @@ void Board::setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int 
 	sf::FloatRect spriteBounds;
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
+
+			if (points[i][j].getClicked()) {
+				points[i][j].setFillColor(sf::Color::White);
+			}
 
 			//Find the center of the circle
 			spriteBounds = points[i][j].getGlobalBounds();

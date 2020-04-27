@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="background.png" />
-    <Image Include="button.png" />
+    <Image Include="button2.png" />
     <Image Include="ShipCarrierHull.png" />
     <Image Include="ShipCruiserHull.png" />
     <Image Include="ShipDestroyerHull.png" />

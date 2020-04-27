@@ -58,7 +58,7 @@
     <Image Include="ShipCruiserHull.png">
       <Filter>Resource Files\Ships</Filter>
     </Image>
-    <Image Include="button.png">
+    <Image Include="button2.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

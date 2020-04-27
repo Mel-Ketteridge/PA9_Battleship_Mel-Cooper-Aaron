@@ -3,6 +3,7 @@
 
 #include <SFML\Graphics.hpp>
 #include <math.h>
+#include <iostream>
 #include "boardCircles.h"
 #include "constants.h"
 
@@ -12,8 +13,8 @@ private:
 	sf::Texture carrierTexture;
 	sf::Texture buttonTexture;
 	sf::Sprite background;
-	sf::RectangleShape horizontal;
-	sf::RectangleShape vertical;
+	sf::Sprite horizontal;
+	sf::Sprite vertical;
 	sf::Vector2f buttonSize;
 	sf::Sprite carrier;
 	boardCirles points[8][8];
