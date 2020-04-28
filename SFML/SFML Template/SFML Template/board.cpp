@@ -3,6 +3,10 @@
 Board::Board():numOfCols(8),numOfRows(8),xPixals(1000),yPixals(950),pointRadius(15),seperationOfPoints(65),
 xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 
+	//Initilize Random Things you use later
+	lastClickedCircle.x = 0;
+	lastClickedCircle.y = 0;
+
 	//Set the background
 	backgroundTexture.loadFromFile("background.png");
 	background.setTexture(backgroundTexture);
@@ -134,7 +138,9 @@ void Board::hover(sf::Vector2i cursorPos) {
 			//If the current cursorPosition is within the radius of the Point then turn it blue
 			if (sqrt(pow((spriteCenter.x - (double)cursorPos.x), 2) + pow((spriteCenter.y - (double)cursorPos.y), 2)) 
 				<= (double) pointRadius) {
-				points[i][j].setFillColor(sf::Color::Blue);
+				if (!points[i][j].getClicked()) {
+					points[i][j].setFillColor(sf::Color::Blue);
+				}
 				//prev = &points[i][j];
 			}
 		}
@@ -142,27 +148,32 @@ void Board::hover(sf::Vector2i cursorPos) {
 }
 
 //If you click on a tile make it blue, if you click on it again make it white
-void Board::clicked(sf::Vector2i mouseClickedPos) {
+void Board::setRed() {
 	sf::Vector2i spriteCenter;
 	sf::FloatRect spriteBounds;
-	for (int i = 0; i < numOfCols; i++) {
-		for (int j = 0; j < numOfRows; j++) {
+	//for (int i = 0; i < numOfCols; i++) {
+	//	for (int j = 0; j < numOfRows; j++) {
+	//
+	//		//Find the center of the circle
+	//		spriteBounds = points[i][j].getGlobalBounds();
+	//		spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+	//		spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+	//
+	//		//If the current cursorPosition is within the radius of the Point then turn it blue
+	//		if (sqrt(pow((spriteCenter.x - (double)mouseClickedPos.x), 2) + pow((spriteCenter.y - (double)mouseClickedPos.y), 2))
+	//			<= (double)pointRadius) {
+	//			if (points[i][j].getClicked()) {
+	//				points[i][j].setFillColor(sf::Color::Red);
+	//				std::cout << "fuck";
+	//			}
+	//			
+	//		}
+	//	}
+	//}
+	//std::cout << lastClickedCircle.x << "  " <<  lastClickedCircle.y;
+	points[lastClickedCircle.x][lastClickedCircle.y].setFillColor(sf::Color::Red);
+	points[lastClickedCircle.x][lastClickedCircle.y].setClicked(true);
 
-			//Find the center of the circle
-			spriteBounds = points[i][j].getGlobalBounds();
-			spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
-			spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
-
-			//If the current cursorPosition is within the radius of the Point then turn it blue
-			if (sqrt(pow((spriteCenter.x - (double)mouseClickedPos.x), 2) + pow((spriteCenter.y - (double)mouseClickedPos.y), 2))
-				<= (double)pointRadius) {
-				if (points[i][j].getClicked()) {
-					points[i][j].setFillColor(sf::Color::Red);
-				}
-				
-			}
-		}
-	}
 }
 
 void Board::setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horizVert, int &gameStatus) {
@@ -189,6 +200,7 @@ void Board::setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horizVert, 
 				if (!points[i][j].getClicked()) {
 					points[i][j].setFillColor(sf::Color::Blue);
 					points[i][j].setClicked(true);
+					lastClickedCircle.x = i; lastClickedCircle.y = j; //Store last clicked on sprite
 					placeShip(spriteCenter, shipSize, horizVert, gameStatus);
 				}
 				else {
@@ -346,7 +358,7 @@ bool Board::checkConfirmClicked(sf::Vector2i mouseClickedPos, int& gameStatus) {
 
 		
 	}
-	return false;
+	return true;
 }
 
 bool Board::checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus) {

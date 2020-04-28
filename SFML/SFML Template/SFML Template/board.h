@@ -7,6 +7,7 @@
 #include "boardCircles.h"
 #include "constants.h"
 #include <vector>
+
 class Board {
 private:
 	sf::Texture backgroundTexture;
@@ -15,6 +16,7 @@ private:
 	sf::Sprite background;
 	sf::Sprite buttonSprites[3];
 	sf::Vector2f buttonSize;
+	sf::Vector2i lastClickedCircle;
 	sf::Sprite ships[5];
 	boardCirles points[8][8];
 	sf::Text boardText[4];
@@ -35,7 +37,7 @@ public:
 	Board();
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
-	void clicked(sf::Vector2i mouseClickedPos);
+	void setRed();
 	void setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horiz_vert, int &gameStatus);
 	void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);

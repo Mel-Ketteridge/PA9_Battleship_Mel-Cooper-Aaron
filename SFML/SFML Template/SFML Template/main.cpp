@@ -54,12 +54,8 @@ int main() {
 					}
 
 					//Check if confirm button has been pressed
-					
-					if (!playerBoard.checkConfirmClicked(mouseClickedPos, gameStatus)) {
-						playerBoard.clicked(mouseClickedPos);
-					};
-						
-					
+					if (!playerBoard.checkConfirmClicked(mouseClickedPos, gameStatus))
+						playerBoard.setRed();
 				}
 			}
 		}
