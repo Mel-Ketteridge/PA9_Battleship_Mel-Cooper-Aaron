@@ -10,17 +10,14 @@
 class Board {
 private:
 	sf::Texture backgroundTexture;
-	sf::Texture carrierTexture;
+	sf::Texture shipsTexture[5];
 	sf::Texture buttonTexture;
 	sf::Sprite background;
-	sf::Sprite horizontal;
-	sf::Sprite vertical;
+	sf::Sprite buttonSprites[3];
 	sf::Vector2f buttonSize;
-	sf::Sprite carrier;
+	sf::Sprite ships[5];
 	boardCirles points[8][8];
-	sf::Text boardText;
-	sf::Text verticalText;
-	sf::Text horizontalText;
+	sf::Text boardText[4];
 	sf::Font timesNewRoman;
 	const int numOfCols;
 	const int numOfRows;
@@ -39,7 +36,8 @@ public:
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
 	void clicked(sf::Vector2i mouseClickedPos);
-	void setShip(sf::Vector2i mouseClickedPos, sf::RenderWindow& window, int whichShip);
+	void setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horiz_vert, int &gameStatus);
+	void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 };
 
 
