@@ -58,17 +58,36 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 		}
 	}
 
-	//Place the ships
-	shipsTexture[0].loadFromFile("ShipCarrierHull.png");
+	//Loading in ships, setting origin, texture, and rotation.
+	//Carrier
+	shipsTexture[0].loadFromFile("ShipCarrierHull.png"); 
 	ships[0].setTexture(shipsTexture[0]);
 	ships[0].setOrigin(39, 40);
 	ships[0].setRotation(180);
 
-	shipsTexture[1].loadFromFile("ShipCruiserHull.png");
+	//Cruiser
+	shipsTexture[1].loadFromFile("ShipCruiserHull.png"); 
 	ships[1].setTexture(shipsTexture[1]);
 	ships[1].setOrigin(33, 30);
 	ships[1].setRotation(180);
 
+	//Destroyer
+	shipsTexture[2].loadFromFile("ShipDestroyerHull.png"); 
+	ships[2].setTexture(shipsTexture[2]);
+	ships[2].setOrigin(27, 25);
+	ships[2].setRotation(180);
+	 
+	//Submarine
+	shipsTexture[3].loadFromFile("ShipSubMarineHull.png");
+	ships[3].setTexture(shipsTexture[3]);
+	ships[3].setOrigin(33, 25);
+	ships[3].setRotation(180);
+
+	//Patrol
+	shipsTexture[4].loadFromFile("ShipPatrolHull.png");
+	ships[4].setTexture(shipsTexture[4]);
+	ships[4].setOrigin(20, 40);
+	ships[4].setRotation(180);
 }
 
 //Draw the board on the window
@@ -77,12 +96,15 @@ void Board::draw(sf::RenderWindow& window) {
 	window.draw(boardText[0]); //Player Board
 	window.draw(ships[0]);
 	window.draw(ships[1]);
-	window.draw(buttonSprites[0]); //Horizontal Button
-	window.draw(boardText[1]); //Horizontal Text
-	window.draw(buttonSprites[1]); //Vertical Button
-	window.draw(boardText[2]); //Vertical Text
-	window.draw(buttonSprites[2]); //Vertical Button
-	window.draw(boardText[3]); //Vertical Text
+	window.draw(ships[2]);
+	window.draw(ships[3]);
+	window.draw(ships[4]);
+	//window.draw(buttonSprites[0]); //Horizontal Button
+	//window.draw(boardText[1]); //Horizontal Text
+	//window.draw(buttonSprites[1]); //Vertical Button
+	//window.draw(boardText[2]); //Vertical Text
+	window.draw(buttonSprites[2]); //Confirm Button
+	window.draw(boardText[3]); //Confirm Text
 
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
@@ -134,14 +156,10 @@ void Board::clicked(sf::Vector2i mouseClickedPos) {
 			//If the current cursorPosition is within the radius of the Point then turn it blue
 			if (sqrt(pow((spriteCenter.x - (double)mouseClickedPos.x), 2) + pow((spriteCenter.y - (double)mouseClickedPos.y), 2))
 				<= (double)pointRadius) {
-				if (!points[i][j].getClicked()) {
-					points[i][j].setFillColor(sf::Color::Blue);
-					points[i][j].setClicked(true);
+				if (points[i][j].getClicked()) {
+					points[i][j].setFillColor(sf::Color::Red);
 				}
-				else {
-					points[i][j].setFillColor(sf::Color::White);
-					points[i][j].setClicked(false);
-				}
+				
 			}
 		}
 	}
@@ -186,7 +204,7 @@ void Board::setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horizVert, 
 void Board::placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus) {
 	sf::FloatRect checkOrientation;
 
-	if (gameStatus == 0) {
+	if (gameStatus == 0) { //Placing Carrier
 
 		if (!horizVert) {
 			checkOrientation = ships[0].getGlobalBounds();
@@ -206,7 +224,7 @@ void Board::placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, i
 			ships[0].setPosition(spriteCenter.x, spriteCenter.y);
 		}
 	}
-	else if (gameStatus == 1) {
+	else if (gameStatus == 1) { 
 
 		if (!horizVert) {
 			checkOrientation = ships[1].getGlobalBounds();
@@ -226,4 +244,142 @@ void Board::placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, i
 			ships[1].setPosition(spriteCenter.x, spriteCenter.y);
 		}
 	}
+	else if (gameStatus == 2) {
+
+		if (!horizVert) {
+			checkOrientation = ships[2].getGlobalBounds();
+			if (checkOrientation.height > checkOrientation.width) {
+				ships[2].setRotation(-90);
+			}
+
+			ships[2].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+
+		if (horizVert) {
+			checkOrientation = ships[2].getGlobalBounds();
+			if (checkOrientation.height < checkOrientation.width) {
+				ships[2].setRotation(180);
+			}
+
+			ships[2].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+	}
+	else if (gameStatus == 3) {
+
+		if (!horizVert) {
+			checkOrientation = ships[3].getGlobalBounds();
+			if (checkOrientation.height > checkOrientation.width) {
+				ships[3].setRotation(-90);
+			}
+
+			ships[3].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+
+		if (horizVert) {
+			checkOrientation = ships[3].getGlobalBounds();
+			if (checkOrientation.height < checkOrientation.width) {
+				ships[3].setRotation(180);
+			}
+
+			ships[3].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+	}
+	else if (gameStatus == 4) {
+
+		if (!horizVert) {
+			checkOrientation = ships[4].getGlobalBounds();
+			if (checkOrientation.height > checkOrientation.width) {
+				ships[4].setRotation(-90);
+			}
+
+			ships[4].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+
+		if (horizVert) {
+			checkOrientation = ships[4].getGlobalBounds();
+			if (checkOrientation.height < checkOrientation.width) {
+				ships[4].setRotation(180);
+			}
+
+			ships[4].setPosition(spriteCenter.x, spriteCenter.y);
+		}
+	}
+}
+
+
+bool Board::checkConfirmClicked(sf::Vector2i mouseClickedPos, int& gameStatus) {
+	//Converting Vector2i to Vector2f
+	sf::Vector2f mouseClickedFloat(mouseClickedPos.x, mouseClickedPos.y);
+	sf::FloatRect bounds = buttonSprites[2].getGlobalBounds();
+	sf::Vector2i spriteCenter;
+	sf::FloatRect spriteBounds;
+	//Checking if confirm has been pressed
+	if (bounds.contains(mouseClickedFloat)) {
+		//Confirm has been pressed
+		std::vector<sf::Vector2i> pointVector;
+		for (int i = 0; i < numOfCols; i++) {
+			for (int j = 0; j < numOfRows; j++) {
+				//Find the center of the circle
+				spriteBounds = points[i][j].getGlobalBounds();
+				spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+				spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+
+				//If the current cursorPosition is within the radius of the Point then turn it blue
+				sf::FloatRect shipRect = ships[gameStatus].getGlobalBounds();
+				if (shipRect.contains(spriteCenter.x, spriteCenter.y)) {
+					//Current circle contains ship sprite
+					printf("Entered if statement\n");
+					sf::Vector2i tempPoint;
+					tempPoint.x = j;
+					tempPoint.y = i;
+					pointVector.push_back(tempPoint);
+					if (points[i][j].getIsOccupied()) {
+						printf("getIsOccupied if statement entered");
+						return false;
+					} 
+				}
+			}
+		}
+		
+		//See if any spots in pointVector are occupied
+		return checkPointVector(pointVector, gameStatus);
+
+		
+	}
+	return false;
+}
+
+bool Board::checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus) {
+	int shipLength = 0;
+	if (gameStatus == 0) {
+		shipLength = 5;
+	}
+	if (gameStatus == 1) {
+		shipLength = 4;
+	}
+	if (gameStatus == 2) {
+		shipLength = 3;
+	}
+	if (gameStatus == 3) {
+		shipLength = 3;
+	}
+	if (gameStatus == 4) {
+		shipLength = 2;
+	}
+	
+	int vectorSize = pointVector.size();
+	printf("vectorSize = %d \n shipLength = %d", vectorSize, shipLength);
+	if (vectorSize != shipLength ) { 
+		printf("ERR: vectorSize != shipLength");
+		return false;
+	}
+	else {
+		for (int i = 0; i < shipLength; i++) {
+			//printf("");
+			points[pointVector[i].y][pointVector[i].x].setIsOccupied(true);
+		}
+		gameStatus++;
+	}
+
+	return true;
 }

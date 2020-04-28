@@ -8,7 +8,7 @@ int main() {
 
 	Board playerBoard;
 	bool horizVert = false;
-	int gameStatus = 1;
+	int gameStatus = 0;
 	//0 is Placing Carrier, 1 is playing Cruiser, 2 is placing submarine, 3 is Destroyer, 4 Patrol Boat
 
 	sf::Vector2i cursorPos;
@@ -40,12 +40,26 @@ int main() {
 						playerBoard.setShip(mouseClickedPos, DESTROYER, horizVert, gameStatus);
 						horizVert = !horizVert;
 					}
-					if (gameStatus == 2)
+					if (gameStatus == 2) {
 						playerBoard.setShip(mouseClickedPos, SUB, horizVert, gameStatus);
-					if (gameStatus == 3)
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 3) {
 						playerBoard.setShip(mouseClickedPos, CRUSER, horizVert, gameStatus);
-					if (gameStatus == 4)
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 4) {
 						playerBoard.setShip(mouseClickedPos, PATROL, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
+
+					//Check if confirm button has been pressed
+					
+					if (!playerBoard.checkConfirmClicked(mouseClickedPos, gameStatus)) {
+						playerBoard.clicked(mouseClickedPos);
+					};
+						
+					
 				}
 			}
 		}

@@ -6,7 +6,7 @@
 #include <iostream>
 #include "boardCircles.h"
 #include "constants.h"
-
+#include <vector>
 class Board {
 private:
 	sf::Texture backgroundTexture;
@@ -38,6 +38,8 @@ public:
 	void clicked(sf::Vector2i mouseClickedPos);
 	void setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horiz_vert, int &gameStatus);
 	void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
+	bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
+	bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);
 };
 
 
