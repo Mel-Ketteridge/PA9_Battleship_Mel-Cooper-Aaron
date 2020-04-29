@@ -62,10 +62,11 @@ int main() {
 				}
 			}
 		}
-		computerBoard.draw(window);
+		
 		playerBoard.hover(cursorPos);
 		playerBoard.draw(window);
-		//computerBoard.draw(window);
+		computerBoard.draw(window);
+		computerBoard.hover(cursorPos);
 		window.display();
 
 	}

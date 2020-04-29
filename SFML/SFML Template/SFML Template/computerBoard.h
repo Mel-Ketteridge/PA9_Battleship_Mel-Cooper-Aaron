@@ -36,7 +36,7 @@ private:
 public:
 	ComputerBoard();
 	void draw(sf::RenderWindow& window);
-	//void hover(sf::Vector2i cursorPos);
+	void hover(sf::Vector2i cursorPos);
 	//void setRed();
 	//void setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horiz_vert, int& gameStatus);
 	//void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);

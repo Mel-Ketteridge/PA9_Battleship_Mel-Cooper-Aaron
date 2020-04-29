@@ -1,7 +1,7 @@
 #include "computerBoard.h"
 
-ComputerBoard::ComputerBoard() :numOfCols(8), numOfRows(8), xPixals(1000), yPixals(950), pointRadius(1015), seperationOfPoints(65),
-xOffset(1120), yOffset(1160), buttonPosX(850), buttonPosY(200) {
+ComputerBoard::ComputerBoard() :numOfCols(8), numOfRows(8), xPixals(1000), yPixals(950), pointRadius(15), seperationOfPoints(65),
+xOffset(1120), yOffset(160), buttonPosX(850), buttonPosY(200) {
 	//Initilize Random Things you use later
 	lastClickedCircle.x = 0;
 	lastClickedCircle.y = 0;
@@ -12,11 +12,11 @@ xOffset(1120), yOffset(1160), buttonPosX(850), buttonPosY(200) {
 	background.setPosition(1000, 0);
 	
 	//Setup the Text
-	timesNewRoman.loadFromFile("timesbd.ttf");
+	timesNewRoman.loadFromFile("TarrgetLaserItalic-pzxR.otf");
 	boardText[0].setFont(timesNewRoman);
-	boardText[0].setPosition(100, 20);
-	boardText[0].setFillColor(sf::Color::Black);
-	boardText[0].setCharacterSize(100);
+	boardText[0].setPosition(1100, 20);
+	boardText[0].setFillColor(sf::Color::White);
+	boardText[0].setCharacterSize(70);
 	boardText[0].setString("Computer Board");
 
 	//Set Button Size
@@ -53,12 +53,13 @@ xOffset(1120), yOffset(1160), buttonPosX(850), buttonPosY(200) {
 	buttonSprites[2].setPosition(buttonPosX, buttonPosY + buttonSize.y * 2);
 	printf("numOfCols = %d \n", numOfCols);
 	printf("numOfRows = %d \n", numOfRows);
+
 	//Initilize all the circles at the correct positions
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			points[i][j].setRadius(pointRadius);
-			points[i][j].setPosition(((pointRadius * 2 + seperationOfPoints) * i) + xOffset + 1000,
-				((pointRadius * 2 + seperationOfPoints) * j) + yOffset + 1000);
+			points[i][j].setPosition(((pointRadius * 2 + seperationOfPoints) * i) + xOffset ,
+				((pointRadius * 2 + seperationOfPoints) * j) + yOffset);
 		}
 	}
 }
@@ -87,4 +88,33 @@ void ComputerBoard::draw(sf::RenderWindow& window) {
 		}
 	}
 
+}
+
+void ComputerBoard::hover(sf::Vector2i cursorPos) {
+
+	sf::Vector2i spriteCenter;
+	sf::FloatRect spriteBounds;
+	//static boardCirles* prev = nullptr;
+	for (int i = 0; i < numOfCols; i++) {
+		for (int j = 0; j < numOfRows; j++) {
+			//Make sure the previous tile that was hovered over is Blue
+			if (!points[i][j].getClicked()) {
+				points[i][j].setFillColor(sf::Color::White);
+			}
+
+			//Find the center of the circle
+			spriteBounds = points[i][j].getGlobalBounds();
+			spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+			spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+
+			//If the current cursorPosition is within the radius of the Point then turn it blue
+			if (sqrt(pow((spriteCenter.x - (double)cursorPos.x), 2) + pow((spriteCenter.y - (double)cursorPos.y), 2))
+				<= (double)pointRadius) {
+				if (!points[i][j].getClicked()) {
+					points[i][j].setFillColor(sf::Color::Blue);
+				}
+				//prev = &points[i][j];
+			}
+		}
+	}
 }
