@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
+    <ClCompile Include="computerBoard.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
     <ClInclude Include="boardCircles.h" />
+    <ClInclude Include="computerBoard.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>

@@ -2,11 +2,13 @@
 #include "board.h"
 #include <iostream>
 #include "constants.h"
+#include "computerBoard.h"
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(1000,950), "First Try");
+	sf::RenderWindow window(sf::VideoMode(2000,950), "First Try");
 
 	Board playerBoard;
+	ComputerBoard computerBoard;
 	bool horizVert = false;
 	int gameStatus = 0;
 	//0 is Placing Carrier, 1 is playing Cruiser, 2 is placing submarine, 3 is Destroyer, 4 Patrol Boat
@@ -14,6 +16,7 @@ int main() {
 	sf::Vector2i cursorPos;
 	sf::Vector2i mouseClickedPos;
 
+	//This while loop is for placing the 
 	while (window.isOpen() && gameStatus < 5) {
 
 		window.clear();
@@ -59,15 +62,16 @@ int main() {
 				}
 			}
 		}
-
+		computerBoard.draw(window);
 		playerBoard.hover(cursorPos);
 		playerBoard.draw(window);
-
+		//computerBoard.draw(window);
 		window.display();
 
 	}
-
+	
 	while (window.isOpen()) {
+		printf("HIT THE NEXT WHILE LOOP\n");
 		//update
 		window.clear();
 

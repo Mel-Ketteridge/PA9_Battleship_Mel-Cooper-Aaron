@@ -11,13 +11,14 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 	backgroundTexture.loadFromFile("background.png");
 	background.setTexture(backgroundTexture);
 	background.setPosition(0, 0);
+	
 
 	//Setup the Text
-	timesNewRoman.loadFromFile("timesbd.ttf");
+	timesNewRoman.loadFromFile("TarrgetLaserItalic-pzxR.otf");
 	boardText[0].setFont(timesNewRoman);
 	boardText[0].setPosition(100, 20);
-	boardText[0].setFillColor(sf::Color::Black);
-	boardText[0].setCharacterSize(100);
+	boardText[0].setFillColor(sf::Color::White);
+	boardText[0].setCharacterSize(70);
 	boardText[0].setString("Player Board");
 
 	//Set Button Size
