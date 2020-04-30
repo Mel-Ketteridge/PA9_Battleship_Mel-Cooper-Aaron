@@ -98,9 +98,9 @@ void ComputerBoard::hover(sf::Vector2i cursorPos) {
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			//Make sure the previous tile that was hovered over is Blue
-			if (!points[i][j].getClicked()) {
-				points[i][j].setFillColor(sf::Color::White);
-			}
+			//if (!points[i][j].getClicked()) {
+			//	points[i][j].setFillColor(sf::Color::White);
+			//}
 
 			//Find the center of the circle
 			spriteBounds = points[i][j].getGlobalBounds();
@@ -115,6 +115,77 @@ void ComputerBoard::hover(sf::Vector2i cursorPos) {
 				}
 				//prev = &points[i][j];
 			}
+		}
+	}
+}
+
+void ComputerBoard::setRandomShip(int shipSize, bool horiz_vert, int& gameStatus) {
+	srand(time(NULL));
+	int response = rand() % 2 + 1;
+	if (response == 1) { //Player chose horizontally
+		//printf("placing HORIZONTALLY \n");
+		sf::Vector2i newPoint = { 0,0 };
+		bool isOccupied;
+		int withinBounds;
+		do {
+			newPoint.x = rand() % (8 - shipSize);
+			newPoint.y = rand() % (8 - shipSize);
+			//printf("newPOINT.x = %d", newPoint.x);
+			//printf("newPOINT.y = %d", newPoint.y);
+			isOccupied = checkIfOccupied(newPoint.x, newPoint.y, shipSize, response);
+		} while (!(isOccupied == true));
+		placeShip(newPoint, shipSize, response);
+	}
+	else if (response == 2) { //Player chose vertically
+		//printf("placing HORIZONTALLY \n");
+		sf::Vector2i newPoint = { 0,0 };
+		int isOccupied;
+		int withinBounds;
+		do {
+			newPoint.x = rand() % (8 - shipSize);
+			newPoint.y = rand() % (8 - shipSize);
+			//printf("newPOINT.x = %d", newPoint.x);
+			//printf("newPOINT.y = %d", newPoint.y);
+			isOccupied = checkIfOccupied(newPoint.x, newPoint.y, shipSize, response);
+		} while (!(isOccupied == true));
+		placeShip(newPoint, shipSize, response);
+	}
+};
+
+bool ComputerBoard::checkIfOccupied(int x, int y, int shipLength, int direction) {
+	if (direction == 1) { //Ship is placed horizontally
+		for (int i = x; i < x + shipLength; i++) {
+			//printf("Checking if occupied at %d , %d \n", i, y);
+			if (points[y][i].getIsOccupied() == true) {
+				//printf("Found occupied at %d , %d \n", i, y);
+				return false;
+			}
+		}
+	}
+	else if (direction == 2) { //Ship is placed vertically
+		for (int i = y; i < y + shipLength; i++) {
+			if (points[y][i].getIsOccupied() == true) {
+				//printf("Found occupied at %d , %d \n", i, y);
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction) {
+	if (direction == 1) { //Ship is placed horizontally
+		for (int i = point.x; i < point.x + shipLength; i++) {
+			//printf("PLACING AT %d , %d", i, point.y);
+			points[point.y][i].setFillColor(sf::Color::Black);
+			points[point.y][i].setIsOccupied(true);
+		}
+	}
+	else if (direction == 2) { //Ship is placed vertically
+		for (int i = point.y; i < point.y + shipLength; i++) {
+			//printf("PLACING AT %d , %d", i, point.y);
+			points[point.y][i].setFillColor(sf::Color::Black);
+			points[point.y][i].setIsOccupied(true);
 		}
 	}
 }

@@ -38,7 +38,9 @@ public:
 	void draw(sf::RenderWindow& window);
 	void hover(sf::Vector2i cursorPos);
 	//void setRed();
-	//void setShip(sf::Vector2i mouseClickedPos, int shipSize, bool horiz_vert, int& gameStatus);
+	void setRandomShip(int shipSize, bool horiz_vert, int& gameStatus);
+	bool checkIfOccupied(int x, int y, int shipLength, int direction);
+	void placeShip(sf::Vector2i point, int shipLength, int direction);
 	//void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	//bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
 	//bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);

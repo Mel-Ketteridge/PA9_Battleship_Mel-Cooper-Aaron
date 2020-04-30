@@ -1,2 +1,35 @@
-﻿  main.cpp
-  SFML Template.vcxproj -> C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\Debug\SFML Template.exe
+﻿  computerBoard.cpp
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(27,55): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(27,38): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(33,38): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(39,38): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(47,43): warning C4244:  'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(47,31): warning C4244:  'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(50,31): warning C4244:  'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(53,31): warning C4244:  'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(60,27): warning C4244:  'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(62,50): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(61,74): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:  '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         with
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         [
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:             T=float
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         ]
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         and
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         [
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:             T=int
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(107,39): warning C4244:         ]
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:  '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         with
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         [
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:             T=float
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         ]
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         and
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         [
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:             T=int
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(108,38): warning C4244:         ]
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(123,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(150,32): warning C4805:  '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(129,7): warning C4101:  'withinBounds': unreferenced local variable
+C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(143,7): warning C4101:  'withinBounds': unreferenced local variable
+  SFML Template.vcxproj -> C:\Users\coope\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\Debug\SFML Template.exe

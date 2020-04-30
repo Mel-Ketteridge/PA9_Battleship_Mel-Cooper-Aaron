@@ -70,7 +70,37 @@ int main() {
 		window.display();
 
 	}
-	
+	//Resetting game status so we can now place for the 
+	gameStatus = 0;
+	//This loop uses gameStatus to make random placements for the computer
+	while (gameStatus < 5) {
+		if (gameStatus == 0) {
+			computerBoard.setRandomShip(CARRIER, horizVert, gameStatus);
+		}
+		if (gameStatus == 1) {
+			computerBoard.setRandomShip(DESTROYER, horizVert, gameStatus);
+		}
+		if (gameStatus == 2) {
+			computerBoard.setRandomShip(SUB, horizVert, gameStatus);
+		}
+		if (gameStatus == 3) {
+			computerBoard.setRandomShip(CRUSER, horizVert, gameStatus);
+		}
+		if (gameStatus == 4) {
+			computerBoard.setRandomShip(PATROL, horizVert, gameStatus);
+		}
+		gameStatus++;
+	}
+
+	while (window.isOpen()) {
+		printf("Running");
+		playerBoard.hover(cursorPos);
+		playerBoard.draw(window);
+		computerBoard.draw(window);
+		computerBoard.hover(cursorPos);
+		window.display();
+	}
+	/*
 	while (window.isOpen()) {
 		printf("HIT THE NEXT WHILE LOOP\n");
 		//update
@@ -98,6 +128,6 @@ int main() {
 		
 		window.display();
 	}
-
+	*/
 	return 0;
 }
