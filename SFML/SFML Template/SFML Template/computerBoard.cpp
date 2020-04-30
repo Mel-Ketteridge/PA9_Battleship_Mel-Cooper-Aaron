@@ -98,9 +98,9 @@ void ComputerBoard::hover(sf::Vector2i cursorPos) {
 	for (int i = 0; i < numOfCols; i++) {
 		for (int j = 0; j < numOfRows; j++) {
 			//Make sure the previous tile that was hovered over is Blue
-			//if (!points[i][j].getClicked()) {
-			//	points[i][j].setFillColor(sf::Color::White);
-			//}
+			if (!points[i][j].getClicked()) {
+				points[i][j].setFillColor(sf::Color::White);
+			}
 
 			//Find the center of the circle
 			spriteBounds = points[i][j].getGlobalBounds();
@@ -179,6 +179,7 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction)
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[point.y][i].setFillColor(sf::Color::Black);
 			points[point.y][i].setIsOccupied(true);
+			points[point.y][i].setClicked(true);
 		}
 	}
 	else if (direction == 2) { //Ship is placed vertically
@@ -186,6 +187,7 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction)
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[i][point.x].setFillColor(sf::Color::Black);
 			points[i][point.x].setIsOccupied(true);
+			points[i][point.x].setClicked(true);
 		}
 	}
 }
