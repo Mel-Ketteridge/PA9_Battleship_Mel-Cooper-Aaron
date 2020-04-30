@@ -6,7 +6,7 @@
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(2000,950), "First Try");
-
+	srand(time(NULL));
 	Board playerBoard;
 	ComputerBoard computerBoard;
 	bool horizVert = false;
