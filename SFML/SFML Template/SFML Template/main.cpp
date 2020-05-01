@@ -94,7 +94,7 @@ int main() {
 		gameStatus++;
 	}
 
-
+	playerBoard.setBoardCircleShipStatus();
 
 	//Play has placed ships, and computer has placed ships... next loop is for the game logic
 	
@@ -103,6 +103,8 @@ int main() {
 	while (window.isOpen() && stopGame == 0) {
 		if (turn == 0) { //The players turn
 			//Player logic
+			window.clear();
+
 			sf::Event event;
 			while (window.pollEvent(event)) {
 				if (event.type == sf::Event::Closed)
@@ -140,7 +142,26 @@ int main() {
 			turn--;
 		}
 
-		
+		if (playerBoard.gameOver() || computerBoard.gameOver()) {
+			window.clear();
+			turn = 3;
+			playerBoard.draw(window);
+			computerBoard.draw(window);
+
+			if (playerBoard.gameOver())
+				playerBoard.setGameOverText("Computer Won!", window);
+			if (computerBoard.gameOver())
+				playerBoard.setGameOverText("Player Won!", window);
+
+			sf::Event event;
+			while (window.pollEvent(event)) {
+				if (event.type == sf::Event::Closed)
+					window.close();
+			}
+
+			window.display();
+
+		}
 	}
 	
 	/*

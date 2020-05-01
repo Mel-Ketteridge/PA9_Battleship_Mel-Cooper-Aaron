@@ -228,6 +228,12 @@ void ComputerBoard::findDestroyed() {
 
 }
 
+bool ComputerBoard::gameOver() {
+	if (carrier == 0 && cruiser == 0 && destroyer == 0 && sub == 0 && patrol == 0) {
+		return true;
+	}
+	return false;
+}
 
 //Returning true means the player clicked on a circle that hasn't been clicked before
 //Returning false means player clicked on a previously clicked circle or off the screen (not on a circle)

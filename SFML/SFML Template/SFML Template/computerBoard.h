@@ -45,6 +45,7 @@ public:
 	void placeShip(sf::Vector2i point, int shipLength, int direction, int gameStatus);
 	bool playerHitBoard(sf::Vector2i cursorPos);
 	void findDestroyed();
+	bool gameOver();
 	//void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	//bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
 	//bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);

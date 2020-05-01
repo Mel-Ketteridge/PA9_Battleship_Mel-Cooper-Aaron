@@ -1,16 +1,16 @@
-﻿  computerBoard.cpp
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(34,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(34,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(40,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(46,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(54,43): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(54,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(57,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(60,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(67,27): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(69,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(68,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(115,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+﻿  board.cpp
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(36,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(36,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(42,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(48,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(56,43): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(56,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(59,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(62,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(67,27): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(69,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(68,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(143,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -19,7 +19,7 @@ C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Templa
           [
               T=int
           ]
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(116,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(144,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -28,10 +28,7 @@ C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Templa
           [
               T=int
           ]
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(158,32): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(137,7): warning C4101: 'withinBounds': unreferenced local variable
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(151,7): warning C4101: 'withinBounds': unreferenced local variable
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(247,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(202,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -40,7 +37,7 @@ C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Templa
           [
               T=int
           ]
-C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\computerBoard.cpp(248,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(203,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -48,5 +45,267 @@ C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Templa
           and
           [
               T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(235,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(235,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(244,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(244,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(255,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(255,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(264,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(264,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(275,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(275,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(284,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(284,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(295,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(295,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(304,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(304,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(315,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(315,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(324,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(324,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(331,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(331,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(343,40): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(344,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(348,55): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(348,39): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(421,39): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(422,38): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(424,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(424,43): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(426,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(426,43): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(428,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(428,45): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(430,55): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(430,39): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(432,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\SFML Template\board.cpp(432,42): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
           ]
   SFML Template.vcxproj -> C:\Users\MelKe\Documents\GitHub\PA9_Battleship_Mel-Cooper-Aaron\SFML\SFML Template\Debug\SFML Template.exe

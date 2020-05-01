@@ -7,6 +7,7 @@
 #include "boardCircles.h"
 #include "constants.h"
 #include <vector>
+#include <string>
 
 class Board {
 private:
@@ -20,6 +21,7 @@ private:
 	sf::Sprite ships[5];
 	boardCirles points[8][8];
 	sf::Text boardText[4];
+	sf::Text gameOverText;
 	sf::Font timesNewRoman;
 	int carrier, cruiser, destroyer, sub, patrol; 
 	const int numOfCols;
@@ -45,6 +47,8 @@ public:
 	bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);
 	void setBoardCircleShipStatus();
 	bool computerHitBoard();
+	bool gameOver();
+	void setGameOverText(std::string text, sf::RenderWindow& window);
 };
 
 

@@ -22,6 +22,12 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 	boardText[0].setCharacterSize(70);
 	boardText[0].setString("Player Board");
 
+	//Game Over Text
+	gameOverText.setFont(timesNewRoman);
+	gameOverText.setPosition(500, 400);
+	gameOverText.setFillColor(sf::Color::Magenta);
+	gameOverText.setCharacterSize(100);
+
 	//Set Button Size
 	buttonSize.y = 75; buttonSize.x = 150;
 
@@ -430,6 +436,13 @@ void Board::setBoardCircleShipStatus() {
 	}
 }
 
+bool Board::gameOver() {
+	if (carrier == 0 && cruiser == 0 && destroyer == 0 && sub == 0 && patrol == 0) {
+		return true;
+	}
+	return false;
+}
+
 bool Board::computerHitBoard() {
 	int randomY = 0, randomX = 0;
 	do {
@@ -459,4 +472,9 @@ bool Board::computerHitBoard() {
 	}
 
 
+}
+
+void Board::setGameOverText(std::string text, sf::RenderWindow& window) {
+	gameOverText.setString(text);
+	window.draw(gameOverText);
 }
