@@ -20,7 +20,9 @@ private:
 	sf::Sprite ships[5];
 	boardCirles points[8][8];
 	sf::Text boardText[4];
+	sf::Text shipDestroyed;
 	sf::Font timesNewRoman;
+	int carrier, cruiser, destroyer, sub, patrol;
 	const int numOfCols;
 	const int numOfRows;
 	const int xPixals;
@@ -40,8 +42,9 @@ public:
 	//void setRed();
 	void setRandomShip(int shipSize, bool horiz_vert, int& gameStatus);
 	bool checkIfOccupied(int x, int y, int shipLength, int direction);
-	void placeShip(sf::Vector2i point, int shipLength, int direction);
+	void placeShip(sf::Vector2i point, int shipLength, int direction, int gameStatus);
 	bool playerHitBoard(sf::Vector2i cursorPos);
+	void findDestroyed();
 	//void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	//bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
 	//bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);

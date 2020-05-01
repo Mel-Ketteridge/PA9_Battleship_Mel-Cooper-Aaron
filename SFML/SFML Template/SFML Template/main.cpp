@@ -41,7 +41,7 @@ int main() {
 						horizVert = !horizVert;
 					}
 					if (gameStatus == 1) {
-						playerBoard.setShip(mouseClickedPos, DESTROYER, horizVert, gameStatus);
+						playerBoard.setShip(mouseClickedPos, CRUSER, horizVert, gameStatus);
 						horizVert = !horizVert;
 					}
 					if (gameStatus == 2) {
@@ -49,7 +49,7 @@ int main() {
 						horizVert = !horizVert;
 					}
 					if (gameStatus == 3) {
-						playerBoard.setShip(mouseClickedPos, CRUSER, horizVert, gameStatus);
+						playerBoard.setShip(mouseClickedPos, DESTROYER, horizVert, gameStatus);
 						horizVert = !horizVert;
 					}
 					if (gameStatus == 4) {
@@ -80,19 +80,21 @@ int main() {
 			computerBoard.setRandomShip(CARRIER, horizVert, gameStatus);
 		}
 		if (gameStatus == 1) {
-			computerBoard.setRandomShip(DESTROYER, horizVert, gameStatus);
+			computerBoard.setRandomShip(CRUSER, horizVert, gameStatus);
 		}
 		if (gameStatus == 2) {
 			computerBoard.setRandomShip(SUB, horizVert, gameStatus);
 		}
 		if (gameStatus == 3) {
-			computerBoard.setRandomShip(CRUSER, horizVert, gameStatus);
+			computerBoard.setRandomShip(DESTROYER, horizVert, gameStatus);
 		}
 		if (gameStatus == 4) {
 			computerBoard.setRandomShip(PATROL, horizVert, gameStatus);
 		}
 		gameStatus++;
 	}
+
+
 
 	//Play has placed ships, and computer has placed ships... next loop is for the game logic
 	
@@ -126,8 +128,9 @@ int main() {
 
 			playerBoard.hover(cursorPos);
 			playerBoard.draw(window);
-			computerBoard.draw(window);
 			computerBoard.hover(cursorPos);
+			computerBoard.findDestroyed();
+			computerBoard.draw(window);
 			window.display();
 			
 		}

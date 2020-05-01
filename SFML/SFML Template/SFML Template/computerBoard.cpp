@@ -5,6 +5,7 @@ xOffset(1120), yOffset(160), buttonPosX(850), buttonPosY(200) {
 	//Initilize Random Things you use later
 	lastClickedCircle.x = 0;
 	lastClickedCircle.y = 0;
+	carrier = 5; cruiser = 4; destroyer = 3; sub = 3; patrol = 2;
 
 	//Set the background
 	backgroundTexture.loadFromFile("background.png");
@@ -18,6 +19,12 @@ xOffset(1120), yOffset(160), buttonPosX(850), buttonPosY(200) {
 	boardText[0].setFillColor(sf::Color::White);
 	boardText[0].setCharacterSize(70);
 	boardText[0].setString("Computer Board");
+
+	shipDestroyed.setFont(timesNewRoman);
+	shipDestroyed.setPosition(1300, 100);
+	shipDestroyed.setFillColor(sf::Color::Red);
+	shipDestroyed.setCharacterSize(40);
+	//shipDestroyed.setString("Test Destroyed");
 
 	//Set Button Size
 	buttonSize.y = 75; buttonSize.x = 150;
@@ -68,6 +75,7 @@ xOffset(1120), yOffset(160), buttonPosX(850), buttonPosY(200) {
 void ComputerBoard::draw(sf::RenderWindow& window) {
 	window.draw(background);
 	window.draw(boardText[0]); //Player Board
+	window.draw(shipDestroyed);
 	//window.draw(ships[0]);
 	//window.draw(ships[1]);
 	//window.draw(ships[2]);
@@ -129,12 +137,12 @@ void ComputerBoard::setRandomShip(int shipSize, bool horiz_vert, int& gameStatus
 		int withinBounds;
 		do {
 			newPoint.x = rand() % (8 - shipSize);
-			newPoint.y = rand() % (8 - shipSize);
+			newPoint.y = rand() % 8;
 			//printf("newPOINT.x = %d", newPoint.x);
 			//printf("newPOINT.y = %d", newPoint.y);
 			isOccupied = checkIfOccupied(newPoint.x, newPoint.y, shipSize, response);
 		} while (!(isOccupied == true));
-		placeShip(newPoint, shipSize, response);
+		placeShip(newPoint, shipSize, response, gameStatus);
 	}
 	else if (response == 2) { //Player chose vertically
 		//printf("placing HORIZONTALLY \n");
@@ -142,13 +150,13 @@ void ComputerBoard::setRandomShip(int shipSize, bool horiz_vert, int& gameStatus
 		int isOccupied;
 		int withinBounds;
 		do {
-			newPoint.x = rand() % (8 - shipSize);
+			newPoint.x = rand() % 8;
 			newPoint.y = rand() % (8 - shipSize);
 			//printf("newPOINT.x = %d", newPoint.x);
 			//printf("newPOINT.y = %d", newPoint.y);
 			isOccupied = checkIfOccupied(newPoint.x, newPoint.y, shipSize, response);
 		} while (!(isOccupied == true));
-		placeShip(newPoint, shipSize, response);
+		placeShip(newPoint, shipSize, response, gameStatus);
 	}
 };
 
@@ -173,12 +181,13 @@ bool ComputerBoard::checkIfOccupied(int x, int y, int shipLength, int direction)
 	return true;
 }
 
-void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction) {
+void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction, int gameStatus) {
 	if (direction == 1) { //Ship is placed horizontally
 		for (int i = point.x; i < point.x + shipLength; i++) {
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[point.y][i].setFillColor(sf::Color::Black);
 			points[point.y][i].setIsOccupied(true);
+			points[point.y][i].setShip(gameStatus);
 			//points[point.y][i].setClicked(true);
 		}
 	}
@@ -187,9 +196,36 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction)
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[i][point.x].setFillColor(sf::Color::Black);
 			points[i][point.x].setIsOccupied(true);
+			points[i][point.x].setShip(gameStatus);
 			//points[i][point.x].setClicked(true);
 		}
 	}
+}
+
+void ComputerBoard::findDestroyed() {
+	static bool carrierDes = true, cruiserDes = true, destroyerDes = true, subDes = true, patrolDes = true;
+
+	if (carrier == 0 && carrierDes) {
+		carrierDes = false;
+		shipDestroyed.setString("Carrier Destroyed");
+	}
+	else if (cruiser == 0 && cruiserDes) {
+		cruiserDes = false;
+		shipDestroyed.setString("Cruiser Destroyed");
+	}
+	else if (destroyer == 0 && destroyerDes) {
+		destroyerDes = false;
+		shipDestroyed.setString("Destroyer Destroyed");
+	}
+	else if (sub == 0 && subDes) {
+		subDes = false;
+		shipDestroyed.setString("Submarine Destroyed");
+	}
+	else if (patrol == 0 && patrolDes) {
+		patrolDes = false;
+		shipDestroyed.setString("Patrol Boat Destroyed");
+	}
+
 }
 
 
@@ -221,6 +257,16 @@ bool ComputerBoard::playerHitBoard(sf::Vector2i cursorPos) {
 					// REGISTER A HIT!!
 					points[i][j].setFillColor(sf::Color::Red);
 					points[i][j].setClicked(true);
+					if (points[i][j].getShip() == 0)
+						carrier--;
+					if (points[i][j].getShip() == 1)
+						cruiser--;
+					if (points[i][j].getShip() == 2)
+						sub--;
+					if (points[i][j].getShip() == 3)
+						destroyer--;
+					if (points[i][j].getShip() == 4)
+						patrol--;
 					return true; 
 				}
 				else { 

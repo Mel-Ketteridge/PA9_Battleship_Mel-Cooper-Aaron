@@ -21,6 +21,7 @@ private:
 	boardCirles points[8][8];
 	sf::Text boardText[4];
 	sf::Font timesNewRoman;
+	int carrier, cruiser, destroyer, sub, patrol; 
 	const int numOfCols;
 	const int numOfRows;
 	const int xPixals;
@@ -42,6 +43,7 @@ public:
 	void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
 	bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);
+	void setBoardCircleShipStatus();
 	bool computerHitBoard();
 };
 

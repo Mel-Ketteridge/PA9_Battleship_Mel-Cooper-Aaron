@@ -7,10 +7,13 @@
 class boardCirles: public sf::CircleShape{
 	bool clicked;
 	bool isOccupied;
+	int ship;
+
 public:
 	boardCirles() {
 		clicked = false;
 		isOccupied = false;
+		ship = -1;
 	}
 
 	bool getClicked() {
@@ -28,7 +31,16 @@ public:
 	void setIsOccupied(bool set) {
 		isOccupied = set;
 	}
+
+	int getShip() {
+		return ship;
+	}
+
+	void setShip(int set) {
+		ship = set;
+	}
 };
+
 
 
 #endif

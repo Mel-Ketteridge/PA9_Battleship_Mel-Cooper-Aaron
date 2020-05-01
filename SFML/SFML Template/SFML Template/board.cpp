@@ -6,6 +6,7 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 	//Initilize Random Things you use later
 	lastClickedCircle.x = 0;
 	lastClickedCircle.y = 0;
+	carrier = 5; cruiser = 4; destroyer = 3; sub = 3; patrol = 2;
 
 	//Set the background
 	backgroundTexture.loadFromFile("background.png");
@@ -319,7 +320,6 @@ void Board::placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, i
 	}
 }
 
-
 bool Board::checkConfirmClicked(sf::Vector2i mouseClickedPos, int& gameStatus) {
 	//Converting Vector2i to Vector2f
 	sf::Vector2f mouseClickedFloat(mouseClickedPos.x, mouseClickedPos.y);
@@ -397,6 +397,38 @@ bool Board::checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameSta
 	return true;
 }
 
+void Board::setBoardCircleShipStatus() {
+
+	sf::FloatRect carrierBounds = ships[0].getGlobalBounds();
+	sf::FloatRect cruiserBounds = ships[1].getGlobalBounds();
+	sf::FloatRect destroyerBounds = ships[2].getGlobalBounds();
+	sf::FloatRect subBounds = ships[3].getGlobalBounds();
+	sf::FloatRect patrolBounds = ships[4].getGlobalBounds();
+
+	sf::Vector2i spriteCenter;
+	sf::FloatRect spriteBounds;
+	for (int i = 0; i < numOfCols; i++) {
+		for (int j = 0; j < numOfRows; j++) {
+			
+			//Find the center of the circle
+			spriteBounds = points[i][j].getGlobalBounds();
+			spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+			spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+			
+			if (carrierBounds.contains(spriteCenter.x, spriteCenter.y))
+				points[i][j].setShip(0);
+			if (cruiserBounds.contains(spriteCenter.x, spriteCenter.y))
+				points[i][j].setShip(1);
+			if (destroyerBounds.contains(spriteCenter.x, spriteCenter.y))
+				points[i][j].setShip(3);
+			if (subBounds.contains(spriteCenter.x, spriteCenter.y))
+				points[i][j].setShip(2);
+			if (patrolBounds.contains(spriteCenter.x, spriteCenter.y))
+				points[i][j].setShip(4);
+
+		}
+	}
+}
 
 bool Board::computerHitBoard() {
 	int randomY = 0, randomX = 0;
@@ -408,6 +440,16 @@ bool Board::computerHitBoard() {
 	if (points[randomY][randomX].getIsOccupied()) {
 		points[randomY][randomX].setFillColor(sf::Color::Red);
 		points[randomY][randomX].setClicked(true);
+		if (points[randomY][randomX].getShip() == 0)
+			carrier--;
+		if (points[randomY][randomX].getShip() == 1)
+			cruiser--;
+		if (points[randomY][randomX].getShip() == 2)
+			sub--;
+		if (points[randomY][randomX].getShip() == 3)
+			destroyer--;
+		if (points[randomY][randomX].getShip() == 4)
+			patrol--;
 		return true;
 	}
 	else {
@@ -415,4 +457,6 @@ bool Board::computerHitBoard() {
 		points[randomY][randomX].setClicked(true);
 		return true;
 	}
+
+
 }
