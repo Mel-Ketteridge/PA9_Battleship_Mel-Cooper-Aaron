@@ -202,30 +202,35 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction,
 	}
 }
 
-void ComputerBoard::findDestroyed() {
+bool ComputerBoard::findDestroyed() {
 	static bool carrierDes = true, cruiserDes = true, destroyerDes = true, subDes = true, patrolDes = true;
 
 	if (carrier == 0 && carrierDes) {
 		carrierDes = false;
 		shipDestroyed.setString("Carrier Destroyed");
+		return true;
 	}
 	else if (cruiser == 0 && cruiserDes) {
 		cruiserDes = false;
 		shipDestroyed.setString("Cruiser Destroyed");
+		return true;
 	}
 	else if (destroyer == 0 && destroyerDes) {
 		destroyerDes = false;
 		shipDestroyed.setString("Destroyer Destroyed");
+		return true;
 	}
 	else if (sub == 0 && subDes) {
 		subDes = false;
 		shipDestroyed.setString("Submarine Destroyed");
+		return true;
 	}
 	else if (patrol == 0 && patrolDes) {
 		patrolDes = false;
 		shipDestroyed.setString("Patrol Boat Destroyed");
+		return true;
 	}
-
+	return false;
 }
 
 bool ComputerBoard::gameOver() {

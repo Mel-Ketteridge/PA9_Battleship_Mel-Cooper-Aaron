@@ -4,7 +4,8 @@
 #include "constants.h"
 #include "computerBoard.h"
 #include <stdlib.h>     //for using the function sleep
-
+#include <chrono>
+#include <thread>
 int main() {
 	sf::RenderWindow window(sf::VideoMode(2000,950), "First Try");
 	srand(time(NULL));
@@ -16,15 +17,16 @@ int main() {
 
 	sf::Vector2i cursorPos;
 	sf::Vector2i mouseClickedPos;
-
+	using namespace std::this_thread; // sleep_for, sleep_until
+	using namespace std::chrono; // nanoseconds, system_clock, seconds
 	//This while loop is for placing the 
 	while (window.isOpen() && gameStatus < 5) {
 
 		window.clear();
 
 		sf::Event event;
-		while (window.pollEvent(event)){
 
+		while (window.pollEvent(event)){
 			if (event.type == sf::Event::Closed)
 				window.close();
 
@@ -66,6 +68,7 @@ int main() {
 		
 		playerBoard.hover(cursorPos);
 		playerBoard.draw(window);
+		playerBoard.setBottomText("Place your ships! (Click on Player Board) \n Click on the blue circle to rotate\n and press confirm to place your ship", window);
 		computerBoard.draw(window);
 		computerBoard.hover(cursorPos);
 		window.display();
@@ -130,6 +133,7 @@ int main() {
 
 			playerBoard.hover(cursorPos);
 			playerBoard.draw(window);
+			playerBoard.setBottomText("Player your turn! \n Click on Computer Board to hit!", window);
 			computerBoard.hover(cursorPos);
 			computerBoard.findDestroyed();
 			computerBoard.draw(window);
@@ -138,7 +142,19 @@ int main() {
 		}
 		else if (turn == 1) { //The Computers turn
 			//Computer logic
+			playerBoard.hover(cursorPos);
+			playerBoard.draw(window);
+			playerBoard.setBottomText("Computers turn... thinking...", window);
+			computerBoard.hover(cursorPos);
+			
+			computerBoard.draw(window);
+			window.display();
+
+			sleep_for(nanoseconds(1000000000));
 			playerBoard.computerHitBoard();
+			
+
+			
 			turn--;
 		}
 
@@ -158,9 +174,8 @@ int main() {
 				if (event.type == sf::Event::Closed)
 					window.close();
 			}
-
 			window.display();
-
+			
 		}
 	}
 	

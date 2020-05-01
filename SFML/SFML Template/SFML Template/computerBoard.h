@@ -44,7 +44,7 @@ public:
 	bool checkIfOccupied(int x, int y, int shipLength, int direction);
 	void placeShip(sf::Vector2i point, int shipLength, int direction, int gameStatus);
 	bool playerHitBoard(sf::Vector2i cursorPos);
-	void findDestroyed();
+	bool findDestroyed();
 	bool gameOver();
 	//void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	//bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);

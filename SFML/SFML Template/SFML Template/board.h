@@ -22,6 +22,7 @@ private:
 	boardCirles points[8][8];
 	sf::Text boardText[4];
 	sf::Text gameOverText;
+	sf::Text bottomText;
 	sf::Font timesNewRoman;
 	int carrier, cruiser, destroyer, sub, patrol; 
 	const int numOfCols;
@@ -49,6 +50,7 @@ public:
 	bool computerHitBoard();
 	bool gameOver();
 	void setGameOverText(std::string text, sf::RenderWindow& window);
+	void setBottomText(std::string text, sf::RenderWindow& window);
 };
 
 

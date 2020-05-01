@@ -26,7 +26,14 @@ xOffset(120),yOffset(160),buttonPosX(850),buttonPosY(200){
 	gameOverText.setFont(timesNewRoman);
 	gameOverText.setPosition(500, 400);
 	gameOverText.setFillColor(sf::Color::Magenta);
-	gameOverText.setCharacterSize(100);
+	gameOverText.setCharacterSize(100); 
+
+	//Bottom Text
+	bottomText.setFont(timesNewRoman);
+	bottomText.setPosition(50, 870);
+	bottomText.setFillColor(sf::Color::White);
+	bottomText.setStyle(sf::Style::Titlebar);
+	bottomText.setCharacterSize(28);
 
 	//Set Button Size
 	buttonSize.y = 75; buttonSize.x = 150;
@@ -477,4 +484,10 @@ bool Board::computerHitBoard() {
 void Board::setGameOverText(std::string text, sf::RenderWindow& window) {
 	gameOverText.setString(text);
 	window.draw(gameOverText);
+}
+
+
+void Board::setBottomText(std::string text, sf::RenderWindow& window) {
+	bottomText.setString(text);
+	window.draw(bottomText);
 }
