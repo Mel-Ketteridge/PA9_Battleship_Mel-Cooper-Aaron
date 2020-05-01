@@ -146,7 +146,6 @@ int main() {
 			playerBoard.draw(window);
 			playerBoard.setBottomText("Computers turn... thinking...", window);
 			computerBoard.hover(cursorPos);
-			
 			computerBoard.draw(window);
 			window.display();
 
@@ -175,7 +174,8 @@ int main() {
 					window.close();
 			}
 			window.display();
-			
+			sleep_for(nanoseconds(10000000000)); //Waits 10 seconds and then stops the game
+			stopGame = 1;
 		}
 	}
 	
