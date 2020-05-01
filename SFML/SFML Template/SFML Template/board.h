@@ -42,6 +42,7 @@ public:
 	void placeShip(sf::Vector2i spriteCenter, int shipSize, bool horizVert, int& gameStatus);
 	bool checkConfirmClicked(sf::Vector2i spriteCenter, int& gameStatus);
 	bool checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameStatus);
+	bool computerHitBoard();
 };
 
 

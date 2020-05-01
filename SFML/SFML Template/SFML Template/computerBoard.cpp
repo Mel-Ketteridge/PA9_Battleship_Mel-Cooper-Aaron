@@ -179,7 +179,7 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction)
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[point.y][i].setFillColor(sf::Color::Black);
 			points[point.y][i].setIsOccupied(true);
-			points[point.y][i].setClicked(true);
+			//points[point.y][i].setClicked(true);
 		}
 	}
 	else if (direction == 2) { //Ship is placed vertically
@@ -187,7 +187,51 @@ void ComputerBoard::placeShip(sf::Vector2i point, int shipLength, int direction)
 			//printf("PLACING AT %d , %d", i, point.y);
 			points[i][point.x].setFillColor(sf::Color::Black);
 			points[i][point.x].setIsOccupied(true);
-			points[i][point.x].setClicked(true);
+			//points[i][point.x].setClicked(true);
 		}
 	}
+}
+
+
+//Returning true means the player clicked on a circle that hasn't been clicked before
+//Returning false means player clicked on a previously clicked circle or off the screen (not on a circle)
+bool ComputerBoard::playerHitBoard(sf::Vector2i cursorPos) {
+	sf::Vector2i spriteCenter;
+	sf::FloatRect spriteBounds;
+	//static boardCirles* prev = nullptr;
+	for (int i = 0; i < numOfCols; i++) {
+		for (int j = 0; j < numOfRows; j++) {
+			//Make sure the previous tile that was hovered over is Blue
+			if (!points[i][j].getClicked()) {
+				points[i][j].setFillColor(sf::Color::White);
+			}
+
+			//Find the center of the circle
+			spriteBounds = points[i][j].getGlobalBounds();
+			spriteCenter.x = spriteBounds.left + (spriteBounds.width / 2);
+			spriteCenter.y = spriteBounds.top + (spriteBounds.height / 2);
+
+			//If the current cursorPosition is within the radius of the Point then turn it blue
+			if (sqrt(pow((spriteCenter.x - (double)cursorPos.x), 2) + pow((spriteCenter.y - (double)cursorPos.y), 2))
+				<= (double)pointRadius) {
+				if (points[i][j].getClicked()) { //If it has already been clicked, return false (they have to click again)
+					return false;
+				}
+				else if (points[i][j].getIsOccupied()) { //If it's occupied (a ship is there) and not clicked
+					// REGISTER A HIT!!
+					points[i][j].setFillColor(sf::Color::Red);
+					points[i][j].setClicked(true);
+					return true; 
+				}
+				else { 
+					//No ship in current spot, and it hasn't been hit before
+					points[i][j].setFillColor(sf::Color::Green);
+					points[i][j].setClicked(true);
+					return true;
+				}
+				//prev = &points[i][j];
+			}
+		}
+	}
+	return false;
 }

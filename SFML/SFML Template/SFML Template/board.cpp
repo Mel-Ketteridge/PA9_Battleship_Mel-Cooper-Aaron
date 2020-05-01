@@ -396,3 +396,23 @@ bool Board::checkPointVector(std::vector<sf::Vector2i> pointVector, int& gameSta
 
 	return true;
 }
+
+
+bool Board::computerHitBoard() {
+	int randomY = 0, randomX = 0;
+	do {
+		randomY = rand() % 8;
+		randomX = rand() % 8;
+	} while (points[randomY][randomX].getClicked());
+
+	if (points[randomY][randomX].getIsOccupied()) {
+		points[randomY][randomX].setFillColor(sf::Color::Red);
+		points[randomY][randomX].setClicked(true);
+		return true;
+	}
+	else {
+		points[randomY][randomX].setFillColor(sf::Color::Green);
+		points[randomY][randomX].setClicked(true);
+		return true;
+	}
+}

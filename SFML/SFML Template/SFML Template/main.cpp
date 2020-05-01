@@ -3,6 +3,7 @@
 #include <iostream>
 #include "constants.h"
 #include "computerBoard.h"
+#include <stdlib.h>     //for using the function sleep
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(2000,950), "First Try");
@@ -17,62 +18,63 @@ int main() {
 	sf::Vector2i mouseClickedPos;
 
 	//This while loop is for placing the 
-	//while (window.isOpen() && gameStatus < 5) {
+	while (window.isOpen() && gameStatus < 5) {
 
-	//	window.clear();
+		window.clear();
 
-	//	sf::Event event;
-	//	while (window.pollEvent(event)){
+		sf::Event event;
+		while (window.pollEvent(event)){
 
-	//		if (event.type == sf::Event::Closed)
-	//			window.close();
+			if (event.type == sf::Event::Closed)
+				window.close();
 
-	//		if (event.type == sf::Event::MouseMoved) {
-	//			cursorPos = sf::Mouse::getPosition(window);
-	//		}
+			if (event.type == sf::Event::MouseMoved) {
+				cursorPos = sf::Mouse::getPosition(window);
+			}
 
-	//		if (event.type == sf::Event::MouseButtonPressed) {
+			if (event.type == sf::Event::MouseButtonPressed) {
 
-	//			if (event.mouseButton.button == sf::Mouse::Left) {
-	//				mouseClickedPos = sf::Mouse::getPosition(window);
-	//				if (gameStatus == 0) {
-	//					playerBoard.setShip(mouseClickedPos, CARRIER, horizVert, gameStatus);
-	//					horizVert = !horizVert;
-	//				}
-	//				if (gameStatus == 1) {
-	//					playerBoard.setShip(mouseClickedPos, DESTROYER, horizVert, gameStatus);
-	//					horizVert = !horizVert;
-	//				}
-	//				if (gameStatus == 2) {
-	//					playerBoard.setShip(mouseClickedPos, SUB, horizVert, gameStatus);
-	//					horizVert = !horizVert;
-	//				}
-	//				if (gameStatus == 3) {
-	//					playerBoard.setShip(mouseClickedPos, CRUSER, horizVert, gameStatus);
-	//					horizVert = !horizVert;
-	//				}
-	//				if (gameStatus == 4) {
-	//					playerBoard.setShip(mouseClickedPos, PATROL, horizVert, gameStatus);
-	//					horizVert = !horizVert;
-	//				}
+				if (event.mouseButton.button == sf::Mouse::Left) {
+					mouseClickedPos = sf::Mouse::getPosition(window);
+					if (gameStatus == 0) {
+						playerBoard.setShip(mouseClickedPos, CARRIER, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 1) {
+						playerBoard.setShip(mouseClickedPos, DESTROYER, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 2) {
+						playerBoard.setShip(mouseClickedPos, SUB, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 3) {
+						playerBoard.setShip(mouseClickedPos, CRUSER, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
+					if (gameStatus == 4) {
+						playerBoard.setShip(mouseClickedPos, PATROL, horizVert, gameStatus);
+						horizVert = !horizVert;
+					}
 
-	//				//Check if confirm button has been pressed
-	//				if (!playerBoard.checkConfirmClicked(mouseClickedPos, gameStatus))
-	//					playerBoard.setRed();
-	//			}
-	//		}
-	//	}
-	//	
-	//	playerBoard.hover(cursorPos);
-	//	playerBoard.draw(window);
-	//	computerBoard.draw(window);
-	//	computerBoard.hover(cursorPos);
-	//	window.display();
+					//Check if confirm button has been pressed
+					if (!playerBoard.checkConfirmClicked(mouseClickedPos, gameStatus))
+						playerBoard.setRed();
+				}
+			}
+		}
+		
+		playerBoard.hover(cursorPos);
+		playerBoard.draw(window);
+		computerBoard.draw(window);
+		computerBoard.hover(cursorPos);
+		window.display();
 
-	//}
+	}
 	//Resetting game status so we can now place for the 
 	gameStatus = 0;
 	//This loop uses gameStatus to make random placements for the computer
+	
 	while (gameStatus < 5) {
 		if (gameStatus == 0) {
 			computerBoard.setRandomShip(CARRIER, horizVert, gameStatus);
@@ -92,25 +94,52 @@ int main() {
 		gameStatus++;
 	}
 
-	while (window.isOpen()) {
-		sf::Event event;
-		while (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
-				window.close();
+	//Play has placed ships, and computer has placed ships... next loop is for the game logic
+	
+	int turn = 0 , stopGame = 0;
+	//I made the stopGame variable to 
+	while (window.isOpen() && stopGame == 0) {
+		if (turn == 0) { //The players turn
+			//Player logic
+			sf::Event event;
+			while (window.pollEvent(event)) {
+				if (event.type == sf::Event::Closed)
+					window.close();
 
-			if (event.type == sf::Event::MouseMoved) {
-				cursorPos = sf::Mouse::getPosition(window);
+				if (event.type == sf::Event::MouseMoved) {
+					cursorPos = sf::Mouse::getPosition(window);
+				}
+
+				if (event.type == sf::Event::MouseButtonPressed) {
+					//Person has clicked...
+					cursorPos = sf::Mouse::getPosition(window);
+					if (event.mouseButton.button == sf::Mouse::Left) {
+						mouseClickedPos = sf::Mouse::getPosition(window);
+						//If the player hit an actual circle that hasn't already been hit
+						if (computerBoard.playerHitBoard(mouseClickedPos)) {
+							turn++;
+						}
+						
+					}
+				}
 			}
 
-			if (event.type == sf::Event::MouseButtonPressed)
-				cursorPos = sf::Mouse::getPosition(window);
+			playerBoard.hover(cursorPos);
+			playerBoard.draw(window);
+			computerBoard.draw(window);
+			computerBoard.hover(cursorPos);
+			window.display();
+			
 		}
-		playerBoard.hover(cursorPos);
-		playerBoard.draw(window);
-		computerBoard.draw(window);
-		computerBoard.hover(cursorPos);
-		window.display();
+		else if (turn == 1) { //The Computers turn
+			//Computer logic
+			playerBoard.computerHitBoard();
+			turn--;
+		}
+
+		
 	}
+	
 	/*
 	while (window.isOpen()) {
 		printf("HIT THE NEXT WHILE LOOP\n");
